@@ -1,0 +1,84 @@
+<html>
+{% include "parts/header.html.jinja2" %}
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        {% include "parts/logo.html.jinja2" %}
+        {% include "parts/menu.html.jinja2" %}
+        {% include "parts/banner_section.html.jinja2" %}
+
+        <section class="slider">
+            <div class="flexslider" style="width: 30%; margin-bottom: 100px">
+                <ul class="slides">
+                    <li>
+                        <img src="images/kitchen_adventurer_cheesecake_brownie.jpg" />
+                    </li>
+                    <li>
+                        <img src="images/kitchen_adventurer_lemon.jpg" />
+                    </li>
+                    <li>
+                        <img src="images/kitchen_adventurer_donut.jpg" />
+                    </li>
+                    <li>
+                        <img src="images/kitchen_adventurer_caramel.jpg" />
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- One -->
+            <section id="one" class="tiles">
+                {% for entry in context.data.blog_entries %}
+                <article>
+                    <span class="image">
+                        <img src="{{entry.menu_background_image}}" alt="" />
+                    </span>
+                    <header class="major">
+                        <h3><a href="{{entry.page}}" class="link">{{entry.title}}</a></h3>
+                        <p>{{entry.description}}</p>
+                    </header>
+                </article>
+
+                {% endfor %}
+            </section>
+
+            <!-- Two -->
+            <section id="two">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Actualité</h2>
+                    </header>
+                    <ul>
+                        {% for new in context.data.news %}
+                        <li>
+                            <h3>{{new.title}}</h3>
+                            <b>{{new.date}}</b>
+                            <p>{{new.description}}</p>
+                        </li>
+                        {% endfor %}
+                    </ul>
+
+
+                </div>
+            </section>
+
+        </div>
+
+        {% include "parts/footer.html.jinja2" %}
+
+    </div>
+
+    {% include "parts/scripts.html.jinja2" %}
+
+
+
+</body>
+
+</html>

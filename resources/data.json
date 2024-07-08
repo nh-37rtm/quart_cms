@@ -1,0 +1,54 @@
+{
+    "$schema": "data.schema.json",
+    "website_title": "ASC Strasbourg - Natation - Plongeon - Trampoline",
+    "website_short_title": "ASC Strasbourg",
+    "blog_entries": [
+        {
+            "title": "Natation",
+            "description": "Cardio douce !",
+            "menu_background_image": "images/pic01.jpg",
+            "page": "natation.html"
+        },
+        {
+            "title": "Trampoline",
+            "description": "Autre façon de se faire une toile !",
+            "menu_background_image": "images/pic02.jpg",
+            "page": "trampoline.html"
+        },
+        {
+            "title": "Plongeon",
+            "description": "",
+            "menu_background_image": "images/pic03.jpg",
+            "page": "plongeon.html"
+        },        {
+            "title": "Contact",
+            "menu_background_image": "images/pic03.jpg",
+            "description": "",
+            "page": "contact.html"
+        }
+    ],
+    "categories": [],
+    "news": [
+        {
+            "date": "18 avril 2024",
+            "title": "Suspension des cours pendant les vacances scolaires",
+            "description": "Nous vous rappelons que le club est fermé pendant les vacances scolaires. Les cours seront par conséquent suspendus à partir du dimanche 21 avril 2024 jusqu'au dimanche 5 mai 2024, et reprendront le lundi 6 mai 2024."
+        },
+        {
+            "date": "7 septembre 2022",
+            "title": "Système d'inscription en ligne pour toutes nos activités",
+            "description": "Les inscriptions papiers tels que nous les pratiquions jusqu'à présent devenaient de plus en plus lourdes à gérer pour notre secrétariat. Comme beaucoup de clubs, nous allons pratiquer l'inscription en ligne via le site <br /> <a href=\"https://ascsnpt.comiti-sport.fr\">https://ascsnpt.comiti-sport.fr</a> <br />Veuillez lire attentivement les informations concernant les modalités d'inscriptions avant de créer votre compte et de respecter la procédure afin de bénéficier des avantages de la réinscription et des membres de la même famille. <br />Aucun dossier d'inscription ou de chèque ne sera accepté à l'accueil de la piscine."
+        },
+        {
+            "date": "3 juin 2022",
+            "title": "Championnat de France Maîtres",
+            "description": "Notre nageur Olivier Roujansky est devenu Champion de France en obtenant la médaille d'or en 50m brasse et la médaille d'argent en 100m brasse. L'article est disponible sur la page natation."
+        },
+
+        {
+            "date": "29 mars 2022",
+            "title": "Premières places pour notre nageur Olivier Roujansky",
+            "description": "Notre nageur Olivier Roujansky est devenu Champion de France en obtenant la médaille d'or en 50m brasse et la médaille d'argent en 100m brasse. L'article est disponible sur la page natation."
+        }
+    ]
+}

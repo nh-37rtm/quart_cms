@@ -1,0 +1,44 @@
+
+
+table thead {
+    border-bottom: solid 2px rgba(212, 212, 255, 0.1);
+    text-align: center;
+    font-size: 22px;
+}
+
+header.major {
+
+    text-align: center;
+
+}
+
+div.flexslider {
+    margin: auto;
+    width: 50%;
+}
+
+
+.flex-direction-nav a.flex-next,.flex-direction-nav a.flex-prev {
+    height: 60px;
+    border-bottom: none;
+}
+
+p.flex-caption {
+    color: black;
+    font-weight: bold;
+}
+
+
+.main_red_color {
+    color: red;
+}
+
+
+#main section {
+    max-width: 680px;
+    margin: auto;
+}
+
+#main section.tiles, #main section#contact {
+    max-width: 100%;
+}
