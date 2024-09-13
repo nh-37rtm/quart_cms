@@ -6,25 +6,25 @@
         {
             "title": "Natation",
             "description": "Cardio douce !",
-            "menu_background_image": "images/pic01.jpg",
-            "page": "natation.html"
+            "menu_background_image": "/r/images/pic01.jpg",
+            "page": "/t/natation.html"
         },
         {
             "title": "Trampoline",
             "description": "Autre façon de se faire une toile !",
-            "menu_background_image": "images/pic02.jpg",
-            "page": "trampoline.html"
+            "menu_background_image": "/r/images/pic02.jpg",
+            "page": "/t/trampoline.html"
         },
         {
             "title": "Plongeon",
             "description": "",
-            "menu_background_image": "images/pic03.jpg",
-            "page": "plongeon.html"
+            "menu_background_image": "/r/images/pic03.jpg",
+            "page": "/t/plongeon.html"
         },        {
             "title": "Contact",
-            "menu_background_image": "images/pic03.jpg",
+            "menu_background_image": "/r/images/pic03.jpg",
             "description": "",
-            "page": "contact.html"
+            "page": "/t/contact.html"
         }
     ],
     "categories": [],

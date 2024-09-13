@@ -1,8 +1,18 @@
+<script>
+	function toto(token) {
+		alert(token)
+		document.getElementById("demo-form").submit();
+	}
+	function onSubmit(token) {
+		alert(token)
+		//document.getElementById("demo-form").submit();
+	}
+</script>
 <!-- Contact -->
 <section id="contact">
 	<div class="inner">
 		<section class="contact_form">
-			<form method="post" action="#" id="demo-form">
+			<form method="post" action="/services/sendmail" id="demo-form">
 				<div class="fields">
 					<div class="field half">
 						<label for="name">Name</label>
@@ -20,7 +30,12 @@
 					</div>
 				</div>
 				<ul class="actions">
-				<li><button type="button" class="g-recaptcha" data-sitekey="6LcZvuMpAAAAAMq9PQHsi5UhbJIljJoVU3pHJqR1" data-callback='onSubmit' data-action='submit'>Submit</button></li>
+					<li>
+						{# <button type="submit" class="g-recaptcha"
+							data-sitekey="6LcZvuMpAAAAAMq9PQHsi5UhbJIljJoVU3pHJqR1" data-callback='onSubmit'
+							data-action='submit'>Submit</button> #}
+							<button type="button" onclick="toto('dsfdsf')">submit</button>
+					</li>
 					<li><input type="reset" value="Clear" /></li>
 				</ul>
 			</form>
