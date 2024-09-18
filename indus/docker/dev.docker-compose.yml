@@ -39,7 +39,7 @@ services:
         target: /app/
         # env de dev vscode
       - type: volume
-        source: ASCS_vscode
-        target: /home/ASCS/.vscode-server
+        source: vscode
+        target: /home/app/.vscode-server
 volumes:
-  ASCS_vscode:
+  vscode:

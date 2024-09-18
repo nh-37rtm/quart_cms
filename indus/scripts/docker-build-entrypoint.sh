@@ -54,7 +54,7 @@ poetry_init()
 }
 
 
-echo ASCS_BUILD_TIME_ENV is : \"$ASCS_BUILD_TIME_ENV\"
+echo BUILD_TIME_ENV is : \"$BUILD_TIME_ENV\"
 
 # partie templates dynamiques
 if test -e /docker-build.env.template
@@ -77,10 +77,10 @@ fi
 
 # loads and exports variables defined inside shell
 # https://unix.stackexchange.com/questions/581230/why-doesnt-read-command-work-with-echo-and-piping
-load_vars < <(echo "$ASCS_BUILD_TIME_ENV")
+load_vars < <(echo "$BUILD_TIME_ENV")
 
 # if build stops here you have to define theses two variables inside 
-# ASCS_BUILD_TIME_ENV
+# BUILD_TIME_ENV
 test -n "$POETRY_HTTP_BASIC_ASCS_PYPI_USERNAME"
 test -n "$POETRY_HTTP_BASIC_ASCS_PYPI_PASSWORD"
 

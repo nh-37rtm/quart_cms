@@ -1,12 +1,16 @@
 from app_context import default_instance as app
-
-from routes import another_route_controller
-
 from quart.templating import stream_template
 from jinja2 import FileSystemLoader
 
+from quart import request
+import jwt
+
 from model.data_model import BlogDescriptorEntryPydantic, IBlogDescriptorEntry
 import os
+
+# routes
+
+import routes.services
 
 content_type_by_extension = { 
     '.css' : 'text/css',
@@ -21,12 +25,7 @@ class DefaultRouteController():
     @app.route("/", methods=["GET"])
     async def default():
         return await DefaultRouteController.templates_route("index.html")
-    
-    @app.route("/services/<service>", methods=["POST"])
-    async def services(service: str):
-        return f"service name : {service}", 200, {'Content-Type': 'text/html'}
-
-    
+        
     @app.route("/t/<path:name>", methods=["GET"])
     async def templates_route(name: str):
         
@@ -44,7 +43,14 @@ class DefaultRouteController():
                 data_as_string = "\n".join(data_file.readlines())
                 data = BlogDescriptorEntryPydantic.model_validate_json(data_as_string)
                 t_data= IBlogDescriptorEntry(**data.model_dump())
-                return_value = await stream_template(f'{name}.jinja2', context={"data": t_data, "csrf": "aaaaaaaaaaaaaa"})
+
+                encoded_jwt = jwt.encode({
+                    "remote_addr": request.remote_addr,
+                    "x-forwarded-for": request.headers['X-Forwarded-For'],
+                    "referer": request.referrer}, "secret", algorithm="HS256")
+                
+                #csrf_token = csrf.generate("this is my secret", "session_secret", "test", date.today())
+                return_value = await stream_template(f'{name}.jinja2', context={"data": t_data, "csrf": encoded_jwt})
 
 
         # if not any found

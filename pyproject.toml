@@ -17,7 +17,9 @@ hypercorn = "^0.16.0"
 jinja-templating = {git = "https://github.com/nh-37rtm/JinjaTemplating"}
 pyyaml = "^6.0.1"
 asyncinotify = "^4.0.9"
-csrf = "^0.1b1"
+aiohttp = "^3.10.5"
+dataclasses-json = "^0.6.7"
+pyjwt = "^2.9.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0.0"

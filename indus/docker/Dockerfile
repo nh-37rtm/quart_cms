@@ -36,13 +36,17 @@ ENTRYPOINT [ "/docker-run-entrypoint.sh" ]
 FROM base as build_base
 
 USER ${APP_USER}:${APP_USER}
+ARG BUILD_TIME_ENV
 
 RUN python3 --version
+
+COPY poetry.lock pyproject.toml /app/
 
 # we install poetry only for the app user
 RUN . ${VIRTUAL_ENV}/bin/activate \
     && pip install poetry \
-    && pip install twine
+    && pip install twine \
+    && cd /app && poetry install
 
 ####################################################################################
 FROM build_base as dev_env

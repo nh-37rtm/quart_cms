@@ -19,7 +19,7 @@ load_vars()
     done
 }
 
-echo ASCS_RUN_TIME_ENV is : \"$ASCS_RUN_TIME_ENV\"
+echo RUN_TIME_ENV is : \"$RUN_TIME_ENV\"
 
 # partie templates dynamiques
 if test -e /app/.env.template
@@ -32,7 +32,7 @@ fi
 
 # loads and exports variables defined inside shell
 # https://unix.stackexchange.com/questions/581230/why-doesnt-read-command-work-with-echo-and-piping
-load_vars < <(echo "$ASCS_RUN_TIME_ENV")
+load_vars < <(echo "$RUN_TIME_ENV")
 
 . $VIRTUAL_ENV/bin/activate
 

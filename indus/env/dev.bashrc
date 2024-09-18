@@ -19,5 +19,5 @@ echo "loading vars for build environment ..."
 # loads and exports variables defined inside shell
 # https://unix.stackexchange.com/questions/581230/why-doesnt-read-command-work-with-echo-and-piping
 # in the dev container the build environement should be available
-load_vars < <(echo "$ASCS_BUILD_TIME_ENV")
+load_vars < <(echo "$BUILD_TIME_ENV")
 # these should be available from build layer

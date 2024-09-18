@@ -41,7 +41,7 @@ set les variables d'environnement necessaires au build :
 export ASCS_READER_PASSWORD=TO_REPLACE
 export ASCS_PYPI_REGISTRY_URL=https://artifactory.ascs.fr/artifactory/api/pypi/ASCS-pypi-stages-local
 export ASCS_DOCKER_REGISTRY_URL=ASCS-docker-stages.artifactory.ascs.fr
-export ASCS_BUILD_TIME_ENV="
+export BUILD_TIME_ENV="
 POETRY_HTTP_BASIC_ASCS_PYPI_USERNAME=ASCS-reader
 POETRY_HTTP_BASIC_ASCS_PYPI_PASSWORD=TO_REPLACE
 ASCS_PYPI_REGISTRY_URL=$ASCS_PYPI_REGISTRY_URL
