@@ -29,14 +29,11 @@
 						<textarea name="message" id="message" rows="6"></textarea>
 					</div>
 					<br />
-					<div class="g-recaptcha field" data-sitekey="6LeDFkgqAAAAAHNFRLnnuNvfwQEIjOkxNmOoA2xJ" data-theme="dark"></div>
+					<div class="g-recaptcha field" data-sitekey="{{context.site_key}}" data-theme="dark"></div>
 					<input type="hidden" value="{{context.csrf}}" name="csrf_token" />
 				</div>
 				<ul class="actions">
 					<li>
-						{# <button type="submit" class="g-recaptcha"
-							data-sitekey="6LcZvuMpAAAAAMq9PQHsi5UhbJIljJoVU3pHJqR1" data-callback='onSubmit'
-							data-action='submit'>SubmitR</button> #}
 						<button type="submit" onclick="toto('dsfdsf')">submit</button>
 					</li>
 					<li><input type="reset" value="Clear" /></li>

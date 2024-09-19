@@ -50,7 +50,7 @@ class DefaultRouteController():
                     "referer": request.referrer}, "secret", algorithm="HS256")
                 
                 #csrf_token = csrf.generate("this is my secret", "session_secret", "test", date.today())
-                return_value = await stream_template(f'{name}.jinja2', context={"data": t_data, "csrf": encoded_jwt})
+                return_value = await stream_template(f'{name}.jinja2', context={"data": t_data, "csrf": encoded_jwt, "site_key": os.environ['SITE_KEY']})
 
 
         # if not any found

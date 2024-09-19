@@ -7,10 +7,10 @@ import aiohttp
 
 
 import jwt
-
+import os
 
 VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify'
-SITE_SECRET = '6LeDFkgqAAAAADx-b9H4M-dRlBEcXhl_w6xdYqFn'
+SITE_SECRET = os.environ['SITE_SECRET']
 
 class ServicesRouteController():
 

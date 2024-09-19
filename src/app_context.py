@@ -10,6 +10,8 @@ import datetime
 from typing import TypeVar, Generic
 import logging
 import json
+import os
+
 
 from model.data_model import BlogDescriptorEntryPydantic
 
@@ -21,6 +23,10 @@ class CustomQuartAppContext(Quart, Generic[T]):
     default_logger: Logger = logger
 
     def load_dependencies(self):
+        
+        assert os.environ['SITE_KEY']
+        assert os.environ['SITE_SECRET']
+        
         logging.info('importing dependencies ...')
         import routes.default        
 
