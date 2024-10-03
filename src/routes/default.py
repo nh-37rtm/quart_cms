@@ -11,6 +11,7 @@ import os
 # routes
 
 import routes.services
+from dataclasses import dataclass
 
 content_type_by_extension = { 
     '.css' : 'text/css',
@@ -18,6 +19,17 @@ content_type_by_extension = {
     '.js' : 'text/javascript',
     '.pdf': 'application/pdf'
 }
+
+
+@dataclass
+class TemplateContext():
+    data: str
+    csrf: str
+    site_key: str
+
+    def current_time(self):
+        return "this is the time"
+    
 
 class DefaultRouteController():
 
@@ -49,8 +61,9 @@ class DefaultRouteController():
                     "x-forwarded-for": request.headers['X-Forwarded-For'],
                     "referer": request.referrer}, "secret", algorithm="HS256")
                 
-                #csrf_token = csrf.generate("this is my secret", "session_secret", "test", date.today())
-                return_value = await stream_template(f'{name}.jinja2', context={"data": t_data, "csrf": encoded_jwt, "site_key": os.environ['SITE_KEY']})
+                template_context = TemplateContext(data= t_data, csrf=encoded_jwt, site_key=os.environ['SITE_KEY'] )
+                
+                return_value = await stream_template(f'{name}.jinja2', context=template_context)
 
 
         # if not any found
